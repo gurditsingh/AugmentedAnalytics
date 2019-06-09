@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
-from utils import *
+from . import utils
 
 def normality_plot(x, col, ax=0):
     ax1 = plt.subplot(ax)
@@ -36,7 +36,7 @@ def catg_graph(x, col):
 
 
 def continous_graph(x, col,pct, catg):
-    if (isContinous(x[col],pct, catg)):
+    if utils.isContinous(x[col], pct, catg):
         dist_plot(x, col)
     else:
         bar_plot(x, col)
